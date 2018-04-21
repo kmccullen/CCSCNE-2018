@@ -1,0 +1,22 @@
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=US
+
+network={
+	ssid="HomeNetwork"
+	psk="ObviousPassword"
+	key_mgmt=WPA-PSK
+}
+
+network={
+	ssid="UniversityWifi"
+	#scan_ssid=1
+	proto=WPA RSN
+	key_mgmt=WPA-EAP IEEE8021X
+	pairwise=CCMP TKIP
+	group=CCMP TKIP
+	auth_alg=OPEN LEAP
+	eap=PEAP
+	identity="MyUserid"
+	password="ReallySecurePassword"
+}
